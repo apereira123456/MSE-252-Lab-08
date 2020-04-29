@@ -15,8 +15,8 @@ Mass_01 = np.array([118.50, 126.74, 113.90])
 Density_01 = Mass_01 * Conversion / (Length_01 * Width_01 * Height_01)
 MOR_01 = 3 * Force_01 * Span / (2 * Width_01 * Height_01 ** 2)
 
-print(Density_01, " lb/in^3")
-print(MOR_01, " lb/in^2")
+print(Density_01, ' lb/in^3')
+print(MOR_01, ' lb/in^2')
 
 # Wet - 7 Days
 Force_02 = np.array([92.35, 51.73, 98.29, 84.71, 113.56, 54.25])
@@ -28,8 +28,8 @@ Mass_02 = np.array([141.80, 115.13, 154.28, 143.95, 151.55, 107.15])
 Density_02 = Mass_02 * Conversion / (Length_02 * Width_02 * Height_02)
 MOR_02 = 3 * Force_02 * Span / (2 * Width_02 * Height_02 ** 2)
 
-print(Density_02, " lb/in^3")
-print(MOR_02, " lb/in^2")
+print(Density_02, ' lb/in^3')
+print(MOR_02, ' lb/in^2')
 
 # Wet - 14 Days
 Force_03 = np.array([55.54, 66.34, 45.52])
@@ -41,8 +41,8 @@ Mass_03 = np.array([127.41, 114.78, 96.91])
 Density_03 = Mass_03 * Conversion / (Length_03 * Width_03 * Height_03)
 MOR_03 = 3 * Force_03 * Span / (2 * Width_03 * Height_03 ** 2)
 
-print(Density_03, " lb/in^3")
-print(MOR_03, " lb/in^2")
+print(Density_03, ' lb/in^3')
+print(MOR_03, ' lb/in^2')
 
 # Wet - 21 Days
 Force_04 = np.array([83.00, 65.11, 66.09])
@@ -54,8 +54,8 @@ Mass_04 = np.array([120.91, 104.70, 122.88])
 Density_04 = Mass_04 * Conversion / (Length_04 * Width_04 * Height_04)
 MOR_04 = 3 * Force_04 * Span / (2 * Width_04 * Height_04 ** 2)
 
-print(Density_04, " lb/in^3")
-print(MOR_04, " lb/in^2")
+print(Density_04, ' lb/in^3')
+print(MOR_04, ' lb/in^2')
 
 # Wet - 28 Days
 Force_05 = np.array([85.29, 89.23, 65.02, 65.04])
@@ -67,9 +67,40 @@ Mass_05 = np.array([130.17, 98.95, 98.22, 122.46])
 Density_05 = Mass_05 * Conversion / (Length_05 * Width_05 * Height_05)
 MOR_05 = 3 * Force_05 * Span / (2 * Width_05 * Height_05 ** 2)
 
-print(Density_05, " lb/in^3")
-print(MOR_05, " lb/in^2")
+print(Density_05, ' lb/in^3')
+print(MOR_05, ' lb/in^2')
     
+# Graph
+fig1 = plt.figure()
+d11 = plt.scatter(Force_01, MOR_01)
+d12 = plt.scatter(Force_02, MOR_02)
+d13 = plt.scatter(Force_03, MOR_03)
+d14 = plt.scatter(Force_04, MOR_04)
+d15 = plt.scatter(Force_05, MOR_05)
+
+plt.title('Figure 1: Portland Cement')
+plt.xlabel('Load (lb)')
+plt.ylabel('Modulus of Rupture (lb/in^2)')
+plt.legend((d11, d12, d13, d14, d15), ('Dry', 'Wet - 7 Days', 'Wet - 14 Days', \
+                                       'Wet - 21 Days', 'Wet - 28 Days'))
+
+plt.savefig('PC_Force_vs_MOR.png', dpi=300)
+
+fig2 = plt.figure()
+d21 = plt.scatter(Density_01, MOR_01)
+d22 = plt.scatter(Density_02, MOR_02)
+d23 = plt.scatter(Density_03, MOR_03)
+d24 = plt.scatter(Density_04, MOR_04)
+d25 = plt.scatter(Density_05, MOR_05)
+
+plt.title('Figure 2: Portland Cement')
+plt.xlabel('Density (lb/in^3)')
+plt.ylabel('Modulus of Rupture (lb/in^2)')
+plt.legend((d11, d12, d13, d14, d15), ('Dry', 'Wet - 7 Days', 'Wet - 14 Days', \
+                                       'Wet - 21 Days', 'Wet - 28 Days'))
+
+plt.savefig('PC_Density_vs_MOR.png', dpi=300)
+
 
 # PLASTER OF PARIS
 # 50% Water
@@ -82,8 +113,8 @@ Mass_06 = np.array([81.75, 75.01, 88.77, 85.37])
 Density_06 = Mass_06 * Conversion / (Length_06 * Width_06 * Height_06)
 MOR_06 = 3 * Force_06 * Span / (2 * Width_06 * Height_06 ** 2)
 
-print(Density_06, " lb/in^3")
-print(MOR_06, " lb/in^2")
+print(Density_06, ' lb/in^3')
+print(MOR_06, ' lb/in^2')
 
 # 56% Water
 Force_07 = np.array([90.48, 81.89, 71.8, 96.49])
@@ -95,8 +126,8 @@ Mass_07 = np.array([85.05, 71.82, 65.27, 92.03])
 Density_07 = Mass_07 * Conversion / (Length_07 * Width_07 * Height_07)
 MOR_07 = 3 * Force_07 * Span / (2 * Width_07 * Height_07 ** 2)
 
-print(Density_07, " lb/in^3")
-print(MOR_07, " lb/in^2")
+print(Density_07, ' lb/in^3')
+print(MOR_07, ' lb/in^2')
 
 # 60% Water
 Force_08 = np.array([58.62, 58.97, 65.99, 65.45])
@@ -108,8 +139,33 @@ Mass_08 = np.array([68.28, 76.17, 75.58, 67.25])
 Density_08 = Mass_08 * Conversion / (Length_08 * Width_08 * Height_08)
 MOR_08 = 3 * Force_08 * Span / (2 * Width_08 * Height_08 ** 2)
 
-print(Density_08, " lb/in^3")
-print(MOR_08, " lb/in^2")
+print(Density_08, ' lb/in^3')
+print(MOR_08, ' lb/in^2')
+
+# Graph
+fig3 = plt.figure()
+d36 = plt.scatter(Force_06, MOR_06)
+d37 = plt.scatter(Force_07, MOR_07)
+d38 = plt.scatter(Force_08, MOR_08)
+
+plt.title('Figure 3: Plaster of Paris')
+plt.xlabel('Load (lb)')
+plt.ylabel('Modulus of Rupture (lb/in^2)')
+plt.legend((d36, d37, d38), ('50% Water', '56% Water', '60% Water'))
+
+plt.savefig('PoP_Force_vs_MOR.png', dpi=300)
+
+fig4 = plt.figure()
+d46 = plt.scatter(Density_06, MOR_06)
+d47 = plt.scatter(Density_07, MOR_07)
+d48 = plt.scatter(Density_08, MOR_08)
+
+plt.title('Figure 4: Plaster of Paris')
+plt.xlabel('Density (lb/in^3)')
+plt.ylabel('Modulus of Rupture (lb/in^2)')
+plt.legend((d46, d47, d48), ('50% Water', '56% Water', '60% Water'))
+
+plt.savefig('PoP_Density_vs_MOR.png', dpi=300)
     
 
 # SLIP
@@ -123,8 +179,8 @@ Mass_09 = np.array([71.08, 61.11, 58.12])
 Density_09 = Mass_09 * Conversion / (Length_09 * Width_09 * Height_09)
 MOR_09 = 3 * Force_09 * Span / (2 * Width_09 * Height_09 ** 2)
 
-print(Density_09, " lb/in^3")
-print(MOR_09, " lb/in^2")
+print(Density_09, ' lb/in^3')
+print(MOR_09, ' lb/in^2')
 
 # Sintered
 Force_10 = np.array([139.34, 93.54, 122.17, 119.26, 146.98, 149.65])
@@ -136,5 +192,28 @@ Mass_10 = np.array([64.02, 64.82, 56.15, 64.60, 55.30, 62.61])
 Density_10 = Mass_10 * Conversion / (Length_10 * Width_10 * Height_10)
 MOR_10 = 3 * Force_10 * Span / (2 * Width_10 * Height_10 ** 2)
 
-print(Density_10, " lb/in^3")
-print(MOR_10, " lb/in^2")
+print(Density_10, ' lb/in^3')
+print(MOR_10, ' lb/in^2')
+
+# Graph
+fig5 = plt.figure()
+d59 = plt.scatter(Force_09, MOR_09)
+d510 = plt.scatter(Force_10, MOR_10)
+
+plt.title('Figure 5: Slip')
+plt.xlabel('Load (lb)')
+plt.ylabel('Modulus of Rupture (lb/in^2)')
+plt.legend((d59, d510), ('Green Body', 'Fired'))
+
+plt.savefig('Slip_Force_vs_MOR.png', dpi=300)
+
+fig6 = plt.figure()
+d69 = plt.scatter(Density_09, MOR_09)
+d610 = plt.scatter(Density_10, MOR_10)
+
+plt.title('Figure 6: Slip')
+plt.xlabel('Density (lb/in^3)')
+plt.ylabel('Modulus of Rupture (lb/in^2)')
+plt.legend((d69, d610), ('Green Body', 'Fired'))
+
+plt.savefig('Slip_Density_vs_MOR.png', dpi=300)
